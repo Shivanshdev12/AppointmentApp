@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a call</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    h2,
+    h4 {
+        text-align: center;
+        color: orange
+    }
+
+    h4 {
+        color: black;
+    }
+
+    form {
+        text-align: center;
+        border: 2px solid orange;
+        padding: 10px 0 10px 0;
+    }
+
+
+    input {
+        width: 80%;
+        border: solid 1px #b9b9b9;
+        border-radius: 3px;
+        padding: 8px 20px;
+        margin: 12px 0 10px 0;
+    }
+
+    button {
+        width: 80%;
+        border: none;
+        color: white;
+        background-color: orange;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .date {
+        display: inline;
+    }
+</style>
+<script>
+    function submitForm(e) {
+        e.preventDefault();
+        console.log("Name:", e.target.Name.value);
+        console.log("Email", e.target.Email.value);
+        console.log("Phone", e.target.Phone.value);
+        console.log("Date", e.target.date.value);
+        console.log("Time", e.target.time.value);
+    }
+</script>
+
+<body>
+    <div>
+        <h2>Book a call</h2>
+        <h4>Book a call slot and our representative will call you within 1hr of selected time.</h4>
+        <hr />
+        <form action="#" onsubmit="submitForm(event)">
+            <label for="Name">Name:</label>
+            <br />
+            <input type="text" name="Name" required />
+            <br />
+            <label for="Email">Email:</label>
+            <br />
+            <input type="email" name="Email" required />
+            <br />
+            <label for="Phone">Phone:</label>
+            <br />
+            <input type="tel" name="Phone" required>
+            <br />
+            <label for="date">Time for Call:</label>
+            <br />
+            <input type="date" value="2021-10-22" name="date" />
+            <input type="time" name="time" />
+            <br />
+            <button>GET A CALL</button>
+        </form>
+    </div>
+</body>
+
+</html>

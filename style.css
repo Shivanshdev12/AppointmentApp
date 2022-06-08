@@ -1,0 +1,39 @@
+h2,
+h4 {
+    text-align: center;
+    color: orange
+}
+
+h4 {
+    color: black;
+}
+
+form {
+    text-align: center;
+    border: 2px solid orange;
+    padding: 10px 0 10px 0;
+}
+
+
+input {
+    width: 80%;
+    border: solid 1px #b9b9b9;
+    border-radius: 3px;
+    padding: 8px 20px;
+    margin: 12px 0 10px 0;
+}
+
+button {
+    width: 80%;
+    border: none;
+    color: white;
+    background-color: orange;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.date {
+    display: inline;
+}
