@@ -10,7 +10,7 @@ function storeDetails(e) {
   };
   localStorage.setItem("myObj", JSON.stringify(myObj));
   console.log(localStorage);
-  //   display();
+  display();
 }
 
 function display() {
