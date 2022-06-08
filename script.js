@@ -1,38 +1,24 @@
-let myObj;
-
 function storeDetails(e) {
-  myObj = {
-    Name: e.target.Name.value,
-    Email: e.target.Email.value,
-    Phone: e.target.Phone.value,
-    Date: e.target.date.value,
-    Time: e.target.time.value,
+  e.preventDefault();
+  const name = e.target.Name.value;
+  const Email = e.target.Email.value;
+  const Phone = e.target.Phone.value;
+  const Date = e.target.date.value;
+  const Time = e.target.time.value;
+  const obj = {
+    name,
+    Email,
+    Phone,
+    Date,
+    Time,
   };
-  localStorage.setItem("myObj", JSON.stringify(myObj));
-  console.log(localStorage);
-  display();
+  localStorage.setItem(obj.Email, JSON.stringify(obj));
+  addNewUser(obj);
 }
 
-function display() {
-  let myObj = JSON.parse(localStorage.getItem("myObj"));
-  let user = new Array();
-  user = Object.values(myObj);
-  var itemList = document.querySelector(".item-list");
-  for (var i = 0; i < user.length; i++) {
-    var li = document.createElement("li");
-    li.className = "list";
-    li.appendChild(document.createTextNode(user[i]));
-    itemList.appendChild(li);
-  }
+function addNewUser(user) {
+  const parentNode = document.getElementById("items");
+  const child = `<li>${user.name}, ${user.Email}, ${user.Phone}
+  ${user.Date}, ${user.Time.toLocaleString()}</li>`;
+  parentNode.innerHTML = parentNode.innerHTML + child;
 }
-
-// myObj = JSON.parse(localStorage.getItem("myObj"));
-// let user = new Array();
-// user = Object.values(myObj);
-// var itemList = document.querySelector(".item-list");
-// for (var i = 0; i < user.length; i++) {
-//   var li = document.createElement("li");
-//   li.className = "list";
-//   li.appendChild(document.createTextNode(user[i]));
-//   itemList.appendChild(li);
-// }
