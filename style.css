@@ -37,3 +37,7 @@ button {
 .date {
     display: inline;
 }
+
+.list {
+    list-style: none;
+}
