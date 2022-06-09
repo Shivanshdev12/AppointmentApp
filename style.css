@@ -23,7 +23,7 @@ input {
     margin: 12px 0 10px 0;
 }
 
-button {
+.call {
     width: 80%;
     border: none;
     color: white;

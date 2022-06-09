@@ -9,47 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<style>
-    h2,
-    h4 {
-        text-align: center;
-        color: orange
-    }
-
-    h4 {
-        color: black;
-    }
-
-    form {
-        text-align: center;
-        border: 2px solid orange;
-        padding: 10px 0 10px 0;
-    }
-
-
-    input {
-        width: 80%;
-        border: solid 1px #b9b9b9;
-        border-radius: 3px;
-        padding: 8px 20px;
-        margin: 12px 0 10px 0;
-    }
-
-    button {
-        width: 80%;
-        border: none;
-        color: white;
-        background-color: orange;
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 15px;
-        margin-top: 10px;
-    }
-
-    .date {
-        display: inline;
-    }
-</style>
 <script>
     function submitForm(e) {
         e.preventDefault();
@@ -65,25 +24,20 @@
         <form action="#" onsubmit="submitForm(event)">
             <label for="Name">Name:</label>
             <br />
-            <input type="text" name="Name" required />
+            <input type="text" name="Name" id="name" required />
             <br />
             <label for="Email">Email:</label>
             <br />
-            <input type="email" name="Email" required />
+            <input type="email" name="Email" id="email" required />
             <br />
             <label for="Phone">Phone:</label>
             <br />
-            <input type="tel" name="Phone" required>
+            <input type="tel" name="Phone" id="phone" required>
             <br />
-            <label for="date">Time for Call:</label>
-            <br />
-            <input type="date" value="2021-10-22" name="date" />
-            <input type="time" name="time" />
-            <br />
-            <button>GET A CALL</button>
+            <button class="call" id="submit">GET A CALL</button>
         </form>
     </div>
-    <ul id="items" class="item-list">
+    <ul id="items">
     </ul>
 </body>
 
