@@ -11,16 +11,32 @@ window.addEventListener("DOMContentLoaded", (e) => {
   });
 });
 
+function removeUser(user) {
+  const parentNode = document.getElementById("items");
+  //   console.log(parentNode.children);
+  console.log(parentNode.childNodes);
+  Array.from(parentNode.children).forEach(function (child) {
+    if (child.id === user.Email) {
+      parentNode.removeChild(child);
+    }
+  });
+}
+
 function storeDetails(e) {
   e.preventDefault();
-  const Email = document.getElementById("email").value;
   const name = document.getElementById("name").value;
+  const Email = document.getElementById("email").value;
   const Phone = document.getElementById("phone").value;
   const obj = {
     name,
     Phone,
     Email,
   };
+  console.log(obj);
+  if (localStorage.getItem(obj.Email)) {
+    removeUser(obj);
+    localStorage.removeItem(obj.Email);
+  }
   localStorage.setItem(obj.Email, JSON.stringify(obj));
   addNewUser(obj);
 }
@@ -32,6 +48,8 @@ function addNewUser(obj) {
   li.appendChild(
     document.createTextNode(obj.name + " " + obj.Email + " " + obj.Phone)
   );
+  li.id = `${obj.Email}`;
+  li.className = "item-list";
   const btn = document.createElement("button");
   btn.appendChild(document.createTextNode("Edit"));
   btn.addEventListener("click", function () {
