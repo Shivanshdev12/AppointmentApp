@@ -1,3 +1,4 @@
+//GET /appointments/
 window.addEventListener("DOMContentLoaded", (e) => {
   axios
     .get(
@@ -56,7 +57,7 @@ function addNewUser(obj) {
   });
   li.appendChild(btn);
 
-  //DELETE
+  //DELETE /appointments/_id
   deleteBtn = document.createElement("button");
   deleteBtn.appendChild(document.createTextNode("Delete"));
   deleteBtn.addEventListener("click", function () {
