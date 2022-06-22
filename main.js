@@ -53,6 +53,12 @@ function addNewUser(obj) {
     document.getElementById("name").value = obj.name;
     document.getElementById("email").value = obj.email;
     document.getElementById("phone").value = obj.Phone;
+    axios
+      .delete(
+        `https://crudcrud.com/api/bf8dbc4320114269966395d1701a03ff/appointments/${obj._id}`
+      )
+      .then((res) => console.log(res.data))
+      .catch((err) => console.error(err));
     li.remove();
   });
   li.appendChild(btn);
@@ -63,11 +69,10 @@ function addNewUser(obj) {
   deleteBtn.addEventListener("click", function () {
     axios
       .delete(
-        `https://cors-anywhere.herokuapp.com/https://crudcrud.com/api/bf8dbc4320114269966395d1701a03ff/appointments/${obj._id}`
+        `https://crudcrud.com/api/bf8dbc4320114269966395d1701a03ff/appointments/${obj._id}`
       )
       .then((res) => console.log(res.data))
       .catch((err) => console.error(err));
-    // console.log(`${obj._id}`);
     li.remove();
   });
   li.appendChild(deleteBtn);
